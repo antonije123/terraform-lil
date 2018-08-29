@@ -2,8 +2,13 @@ resource "aws_vpc" "enviroment-example-two" {
     cidr_block = "10.0.0.0/16"
     enable_dns_hostnames = true
     enable_dns_support = true
-    enab
-    tags = {
+    tags {
         Name = "terraform-aws-vpc-example-two"
     }
+}
+
+resource "aws_subnet" "subnet1" {
+    cidr_block = "${cidrsubnet(aws_vpc.enviroment-example-two.cidr_block,3,1)}"
+    vpc_id = "${aws_vpc.enviroment-example-two.id}"
+    availability_zone = "eu-central-1a"
 }
