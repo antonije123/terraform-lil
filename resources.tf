@@ -20,13 +20,13 @@ resource "aws_subnet" "subnet2" {
 }
 
 resource "aws_security_group" "subnetsecurity" {
-    vpc_id = "${aws_vpc.environment-example-two.id}"
+    vpc_id = "${aws_vpc.enviroment-example-two.id}"
     ingress {
       from_port = 80
       to_port = 80
       protocol = "tcp"
       cidr_blocks = [
-          "${aws_vpc.environment-example-two.cidr_block}"
+          "${aws_vpc.enviroment-example-two.cidr_block}"
       ]
     }
 
