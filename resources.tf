@@ -31,3 +31,7 @@ resource "aws_security_group" "subnetsecurity" {
     }
 
 }
+
+resource "test" "" {
+
+}
