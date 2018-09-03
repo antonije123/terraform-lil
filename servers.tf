@@ -24,6 +24,3 @@ resource "aws_instance" "secondserver" {
 
   subnet_id = "${aws_subnet.subnet2.id}"
 }
-
-
-test.
